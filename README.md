@@ -125,6 +125,8 @@ pnpm --filter asil-runners auto grind --max-tasks 3
 
 See [`examples/quickstart.md`](examples/quickstart.md) for a five-minute integration walkthrough.
 
+Lessons from running these skills unsupervised (what fought automation, fuzzy boundaries under load) are in [`docs/automation-friction.md`](docs/automation-friction.md).
+
 ## What it looks like
 
 ```

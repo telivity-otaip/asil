@@ -39,13 +39,22 @@ REPO_ROOT=/absolute/path/to/your/repo
 
 ## 3. Drop in the runner skills
 
-ASIL's thinkers expect Markdown skill files at `<REPO_ROOT>/.asil/skills/`. The simplest setup:
+ASIL's thinkers and executor load Markdown skills from `ASIL_SKILLS_PATH` (default `<REPO_ROOT>/.asil/skills`). Two layouts are supported:
+
+```bash
+# A) Flat files (early ASIL installs / hand-copied skills)
+.asil/skills/skills/planning-and-task-breakdown.md
+
+# B) Upstream agent-skills layout (git submodule or clone)
+.asil/skills/skills/planning-and-task-breakdown/SKILL.md
+```
 
 ```bash
 mkdir -p .asil/skills
-# Copy or symlink any Markdown skills (e.g. from a public skill library) you want to use.
-# A minimal install is fine — the thinkers fall back to inline defaults
-# if a skill file is missing.
+# Option: submodule an upstream skill library, then point ASIL_SKILLS_PATH at it.
+# Historical ASIL names (security-review, testing-strategy, …) alias onto
+# upstream folder names (security-and-hardening, test-driven-development, …).
+# Thinkers fall back to inline defaults if a skill file is missing.
 ```
 
 Override the location with `ASIL_SKILLS_PATH` if you want them somewhere else.

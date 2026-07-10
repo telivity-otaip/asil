@@ -19,7 +19,9 @@ export function runTestStrategist(
     'test-strategist',
     {
       label: 'Test Strategist',
-      skillFile: 'testing-strategy.md',
+      // Prefer upstream agent-skills name; aliases still resolve
+      // `testing-strategy.md` for older flat installs.
+      skillFile: 'test-driven-development.md',
       fallbackInstructions: FALLBACK,
     },
     request,

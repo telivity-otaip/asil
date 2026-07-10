@@ -26,6 +26,12 @@ export const CATEGORY_PRIORITY: Record<TaskCategory, number> = {
   documentation: 8,
 };
 
+/**
+ * Category → skill basename. Resolved by `loadSkillMarkdown`, which also
+ * tries upstream agent-skills folder names via `SKILL_NAME_ALIASES` and
+ * both flat (`skills/<name>.md`) and directory (`skills/<name>/SKILL.md`)
+ * layouts.
+ */
 export const CATEGORY_SKILL_MAP: Record<TaskCategory, string> = {
   'test-failure': 'test-coverage-improvement',
   'type-error': 'code-simplification',

@@ -19,7 +19,9 @@ export async function runSecurity(
     'security',
     {
       label: 'Security Review',
-      skillFile: 'security-review.md',
+      // Prefer upstream agent-skills name; aliases still resolve
+      // `security-review.md` for older flat installs.
+      skillFile: 'security-and-hardening.md',
       fallbackInstructions: FALLBACK,
     },
     request,

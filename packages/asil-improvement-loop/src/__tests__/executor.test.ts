@@ -456,6 +456,23 @@ describe('executor', () => {
     it('returns empty string when the section is missing', () => {
       expect(extractAntiRationalization('# Just a skill\n\nNo table here.')).toBe('');
     });
+
+    it('also extracts upstream "Common Rationalizations" sections', () => {
+      const skill = [
+        '# Skill',
+        '',
+        '## Common Rationalizations',
+        '| Rationalization | Reality |',
+        '| Tests later | Write them first |',
+        '',
+        '## Red Flags',
+        '- x',
+      ].join('\n');
+      const section = extractAntiRationalization(skill);
+      expect(section).toMatch(/Common Rationalizations/);
+      expect(section).toMatch(/Tests later/);
+      expect(section).not.toMatch(/Red Flags/);
+    });
   });
 
   describe('buildExecutionPrompt', () => {

@@ -22,8 +22,14 @@ export {
   generateDoNotChange,
 } from './brief-builder.js';
 export { runPapa, DEFAULT_CONFIG, type PapaResult } from './papa.js';
+export {
+  loadSkillMarkdown,
+  skillCandidatePaths,
+  SKILL_NAME_ALIASES,
+} from './skill-loader.js';
 export { runSpecWriter } from './thinkers/spec-writer.js';
 export { runSecurity } from './thinkers/security.js';
 export { runTestStrategist } from './thinkers/test-strategist.js';
 export { runApiDesigner } from './thinkers/api-designer.js';
 export { runPlanner } from './thinkers/planner.js';
+export { loadMarkdownSkill } from './thinkers/shared.js';
